@@ -20,23 +20,6 @@ A full-stack platform that keeps every aspect of pet care in sync across pet own
 - **Marketplace**: Browse products, place orders, and follow order status
 - **Events**: View upcoming events, register, and stay informed
 
-#### 🩺 Professional Portal
-
-- **Authentication**: Role-based access for veterinarians, groomers, and trainers
-- **Appointment Desk**: Review assignments and see pet information
-- **Medical Tools**: Add treatment notes, track vaccinations, generate reports
-- **Availability**: Manage available slots to accept new bookings
-- **Analytics**: Monitor performance metrics and export reports
-
-#### 👑 Administrative Portal
-
-- **User Directory**: Manage pet owners and professionals
-- **Appointment Oversight**: Audit schedules, availability, and refund requests
-- **Events**: Create listings, track registrations, and send notifications
-- **Store**: Handle product catalog, orders, inventory, and sales analytics
-- **Adoption Oversight**: Review applications and coordinate home visits
-
----
 
 ## ⚙️ Tech Stack
 
@@ -45,7 +28,6 @@ A full-stack platform that keeps every aspect of pet care in sync across pet own
 | **Frontend** (Pet Owner) | React 19 · Vite 6 · Tailwind CSS 4 · React Router 7 · Framer Motion 12 · Chart.js 4 · Axios 1 · React Toastify 11 · jsPDF 3 |
 | **Frontend** (Professional) | React 19 · Vite 6 · Tailwind CSS 4 · React Router 7 · jwt-decode 4 · Chart.js 4 · jsPDF 3 |
 | **Backend** | Node.js 18+ · Express 4 · MongoDB · Mongoose 8 · JWT 9 · bcrypt 5 · Multer 1 · Cloudinary 1 · Nodemailer 6 |
-| **Payments** | (Optional) Stripe 18 – currently disabled for appointments |
 
 ---
 
@@ -63,14 +45,13 @@ Core Mongoose schemas include: `User`, `Professional`, `Admin`, `Pet`, `Appointm
 - MongoDB (local or Atlas)
 - Cloudinary account for media storage
 - Email provider credentials (SMTP, SendGrid, etc.)
-- Stripe keys (only if re-enabling Stripe payment flows)
 
 ### 🔐 Environment Variables
 
 Create a `.env` file in `backend/`:
 
 ```ini
-MONGODB_URI=mongodb://localhost:27017/pet-care-system
+MONGODB_URI=insert_here
 
 JWT_SECRET=your_super_secret_jwt_key_here
 
@@ -86,7 +67,7 @@ EMAIL_PASS=your_app_password
 PORT=5000
 ```
 
-> Add `STRIPE_SECRET_KEY` and `STRIPE_PUBLISHABLE_KEY` only if you plan to introduce Stripe-based payments.
+
 
 ### 📦 Installation
 
@@ -105,6 +86,7 @@ npm install
 # Install pet owner portal dependencies
 cd ../frontend
 npm install
+npm install react-hot
 
 # Install professional portal dependencies
 cd ../docterInterface
@@ -130,7 +112,6 @@ npm run dev
 ### 🌐 URLs
 
 - Pet Owner Portal: `http://localhost:5173`
-- Professional Portal: `http://localhost:5174`
 - Backend API: `http://localhost:5000`
 
 ---
@@ -160,18 +141,6 @@ pet-care-management-system/
 │       └── assets/
 └── package.json
 ```
-
----
-
-## 🔐 Access Control
-
-| Role | Capabilities |
-| --- | --- |
-| **Pet Owner** | Manage pets, book appointments, shop, track adoptions, file lost/found reports, join events |
-| **Professional** | Manage assigned appointments, update pet records, generate reports, manage availability |
-| **Administrator** | Manage users, professionals, appointments, events, store, and analytics |
-| **Store Admin** | Maintain product catalog, process orders, manage inventory, track sales |
-| **Adoption Coordinator** | Review applications, schedule home visits, track adoption progress |
 
 ---
 
