@@ -8,7 +8,6 @@ A full-stack platform that keeps every aspect of pet care in sync across pet own
 
 ## 🌟 Highlights
 
-### 🎯 Three Connected Experiences
 
 #### 🏠 Pet Owner Portal
 
