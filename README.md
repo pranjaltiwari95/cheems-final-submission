@@ -1,4 +1,4 @@
-# 🐾 Pet Care Management System
+# 🐾 Cheems - Complete Pet Care Solution
 
 **React · Node.js · MongoDB · Tailwind CSS**
 
