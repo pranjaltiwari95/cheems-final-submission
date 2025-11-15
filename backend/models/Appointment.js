@@ -59,15 +59,15 @@ const appointmentSchema = new mongoose.Schema({
       message: "Appointment type must be veterinarian, groomer, or trainer",
     },
   },
-  appointmentFee: {
-    type: Number,
-    required: [true, "Appointment fee is required"],
-    min: [0, "Appointment fee must be greater than or equal to 0"],
-    validate: {
-      validator: (v) => !isNaN(v) && v > 0,
-      message: "Appointment fee must be a positive number",
-    },
-  },
+  // appointmentFee: {
+  //   type: Number,
+  //   required: [true, "Appointment fee is required"],
+  //   min: [0, "Appointment fee must be greater than or equal to 0"],
+  //   validate: {
+  //     validator: (v) => !isNaN(v) && v > 0,
+  //     message: "Appointment fee must be a positive number",
+  //   },
+  // },
   status: {
     type: String,
     default: "scheduled",
