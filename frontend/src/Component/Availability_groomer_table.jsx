@@ -22,7 +22,7 @@ export default function GroomerAvailability() {
       try {
         console.log("Fetching groomer availabilities...");
         const response = await axios.get(
-          "http://localhost:5003/api/appointments/groomer-Reqappointments",
+          "https://cheems-final-submission-1.onrender.com/api/appointments/groomer-Reqappointments",
           { timeout: 5003 }
         );
         console.log("Response:", response.data);
@@ -82,7 +82,7 @@ export default function GroomerAvailability() {
   const handleAccept = async (id) => {
     try {
       setActionLoading(id);
-      const response = await axios.patch(`http://localhost:5003/api/appointments/${id}/accept`);
+      const response = await axios.patch(`https://cheems-final-submission-1.onrender.com/api/appointments/${id}/accept`);
       console.log("Accept response:", response.data);
 
       setAvailabilities(availabilities.filter((avail) => avail._id !== id));
@@ -102,7 +102,7 @@ export default function GroomerAvailability() {
   const handleDeny = async (id) => {
     try {
       setActionLoading(id);
-      const response = await axios.patch(`http://localhost:5003/api/appointments/${id}/deny`);
+      const response = await axios.patch(`https://cheems-final-submission-1.onrender.com/api/appointments/${id}/deny`);
       console.log("Deny response:", response.data);
 
       setAvailabilities(availabilities.filter((avail) => avail._id !== id));

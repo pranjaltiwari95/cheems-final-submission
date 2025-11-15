@@ -28,7 +28,7 @@ export default function ReportPageOne() {
 
       try {
         console.log('Fetching default daily report');
-        const response = await axios.get('http://localhost:5003/api/appointments/reports/generate', {
+        const response = await axios.get('https://cheems-final-submission-1.onrender.com/api/appointments/reports/generate', {
           params: { period: 'daily' },
         });
         console.log('Default report response:', response.data);
@@ -51,7 +51,7 @@ export default function ReportPageOne() {
 
     try {
       console.log('Making API request to generate report with period:', period);
-      const response = await axios.get('http://localhost:5003/api/appointments/reports/generate', {
+      const response = await axios.get('https://cheems-final-submission-1.onrender.com/api/appointments/reports/generate', {
         params: { period, startDate: period === 'custom' ? startDate : undefined, endDate: period === 'custom' ? endDate : undefined },
       });
       console.log('API response received:', response.data);

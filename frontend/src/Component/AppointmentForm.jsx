@@ -4,7 +4,7 @@ import { FaUser, FaPhone, FaEnvelope, FaPaw, FaCalendar, FaClock, FaRupeeSign } 
 
 // Axios instance
 const api = axios.create({
-  baseURL: "http://localhost:5003/api",
+  baseURL: "https://cheems-final-submission-1.onrender.com/api",
   headers: { "Content-Type": "application/json" },
 });
 

@@ -21,7 +21,7 @@ export default function VetAvailability() {
       try {
         console.log("Fetching vet availabilities...");
         const response = await axios.get(
-          "http://localhost:5003/api/appointments/veterinarian-Reqappointments",
+          "https://cheems-final-submission-1.onrender.com/api/appointments/veterinarian-Reqappointments",
           { timeout: 5003 }
         );
         console.log("Response:", response.data);
@@ -81,7 +81,7 @@ export default function VetAvailability() {
     if (modalType === "accept") {
       try {
         const response = await axios.patch(
-          `http://localhost:5003/api/appointments/${modalActionId}/accept`
+          `https://cheems-final-submission-1.onrender.com/api/appointments/${modalActionId}/accept`
         );
         console.log("Accept response:", response.data);
 
@@ -99,7 +99,7 @@ export default function VetAvailability() {
     } else if (modalType === "deny") {
       try {
         const response = await axios.patch(
-          `http://localhost:5003/api/appointments/${modalActionId}/deny`
+          `https://cheems-final-submission-1.onrender.com/api/appointments/${modalActionId}/deny`
         );
         console.log("Deny response:", response.data);
 

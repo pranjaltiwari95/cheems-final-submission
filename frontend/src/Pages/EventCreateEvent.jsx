@@ -23,7 +23,7 @@ const CreateEvent = () => {
       }
 
       // Send POST request to backend
-      const response = await axios.post("http://localhost:5003/api/events", formData, {
+      const response = await axios.post("https://cheems-final-submission-1.onrender.com/api/events", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 

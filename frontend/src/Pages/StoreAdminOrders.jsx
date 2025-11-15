@@ -17,7 +17,7 @@ import {
   ChevronDown
 } from 'lucide-react';
 
-const backendUrl = 'http://localhost:5003';
+const backendUrl = 'https://cheems-final-submission-1.onrender.com';
 const currency = '₹ ';
 
 const StoreAdminOrders = ({ token }) => {

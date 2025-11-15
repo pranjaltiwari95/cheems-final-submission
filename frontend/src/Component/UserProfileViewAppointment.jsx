@@ -14,7 +14,7 @@ const theme = {
 
 // Axios instance with token interceptor
 const api = axios.create({
-  baseURL: 'http://localhost:5003/api',
+  baseURL: 'https://cheems-final-submission-1.onrender.com/api',
   headers: { 'Content-Type': 'application/json' },
 });
 
@@ -169,7 +169,7 @@ const ProfilePage = () => {
       const userId = tokenData.userId;
 
       const response = await axios.post(
-        `http://localhost:5003/api/order/user`,
+        `https://cheems-final-submission-1.onrender.com/api/order/user`,
         { userId },
         {
           headers: {

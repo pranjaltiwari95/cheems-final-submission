@@ -41,7 +41,7 @@ const PetEdit = () => {
         if (!token) {
           throw new Error('No authentication token found. Please log in again.');
         }
-        const response = await axios.get(`http://localhost:5003/api/pets/${id}`, {
+        const response = await axios.get(`https://cheems-final-submission-1.onrender.com/api/pets/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         
@@ -110,7 +110,7 @@ const PetEdit = () => {
       });
 
       const response = await axios.put(
-        `http://localhost:5003/api/pets/update/${id}`,
+        `https://cheems-final-submission-1.onrender.com/api/pets/update/${id}`,
         formDataToSend,
         {
           headers: { 
@@ -135,7 +135,7 @@ const PetEdit = () => {
     try {
       const token = localStorage.getItem('petOwnerToken');
       const response = await axios.delete(
-        `http://localhost:5003/api/pets/delete/${id}`,
+        `https://cheems-final-submission-1.onrender.com/api/pets/delete/${id}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }

@@ -38,7 +38,7 @@ const StaffLogin = () => {
 
     if (validateProfessionalForm()) {
       try {
-        const response = await fetch("http://localhost:5003/api/professionals/login", {
+        const response = await fetch("https://cheems-final-submission-1.onrender.com/api/professionals/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -74,7 +74,7 @@ const StaffLogin = () => {
     setAdminError("");
 
     try {
-      const response = await fetch("http://localhost:5003/api/admins/login", {
+      const response = await fetch("https://cheems-final-submission-1.onrender.com/api/admins/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -78,10 +78,10 @@ const PetAdoptionCoordinatorDashboard = () => {
   const fetchPendingPets = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5003/api/foradoption');
+      const response = await axios.get('https://cheems-final-submission-1.onrender.com/api/foradoption');
       
       // Get all adoptable pets to check which ones are already added
-      const adoptableResponse = await axios.get('http://localhost:5003/api/adoptablepets');
+      const adoptableResponse = await axios.get('https://cheems-final-submission-1.onrender.com/api/adoptablepets');
       const adoptablePetIds = adoptableResponse.data.map(pet => pet.originalPetId || pet._id);
       
       // Filter out pets that are already in the adoptable list
@@ -101,7 +101,7 @@ const PetAdoptionCoordinatorDashboard = () => {
   const fetchAdoptablePets = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5003/api/adoptablepets');
+      const response = await axios.get('https://cheems-final-submission-1.onrender.com/api/adoptablepets');
       setAdoptablePets(response.data);
       setError(null);
     } catch (err) {
@@ -123,7 +123,7 @@ const PetAdoptionCoordinatorDashboard = () => {
       }
 
       console.log("Attempting to fetch adoption forms with token:", token);
-      const response = await axios.get('http://localhost:5003/api/adoptionform/all', {
+      const response = await axios.get('https://cheems-final-submission-1.onrender.com/api/adoptionform/all', {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -155,7 +155,7 @@ const PetAdoptionCoordinatorDashboard = () => {
   const fetchHomeVisits = async () => {
     try {
       const token = localStorage.getItem('adminToken') || localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5003/api/homevisits', {
+      const response = await axios.get('https://cheems-final-submission-1.onrender.com/api/homevisits', {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -171,7 +171,7 @@ const PetAdoptionCoordinatorDashboard = () => {
   const fetchLostPets = async () => {
     try {
       console.log('Fetching lost pets...');
-      const response = await axios.get('http://localhost:5003/api/lost-and-found/lost');
+      const response = await axios.get('https://cheems-final-submission-1.onrender.com/api/lost-and-found/lost');
       console.log('Lost pets response:', response.data);
       setLostPets(response.data);
     } catch (error) {
@@ -183,7 +183,7 @@ const PetAdoptionCoordinatorDashboard = () => {
   const fetchFoundPets = async () => {
     try {
       console.log('Fetching found pets...');
-      const response = await axios.get('http://localhost:5003/api/lost-and-found/found');
+      const response = await axios.get('https://cheems-final-submission-1.onrender.com/api/lost-and-found/found');
       console.log('Found pets response:', response.data);
       setFoundPets(response.data);
     } catch (error) {
@@ -196,7 +196,7 @@ const PetAdoptionCoordinatorDashboard = () => {
   const fetchAdoptedPets = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5003/api/adoptedpets');
+      const response = await axios.get('https://cheems-final-submission-1.onrender.com/api/adoptedpets');
       setAdoptedPets(response.data);
       setError(null);
     } catch (err) {
@@ -243,7 +243,7 @@ const PetAdoptionCoordinatorDashboard = () => {
         formData.append('petImage', fileInput.files[0]);
       }
       
-      await axios.post('http://localhost:5003/api/foradoption', formData, {
+      await axios.post('https://cheems-final-submission-1.onrender.com/api/foradoption', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -282,7 +282,7 @@ const PetAdoptionCoordinatorDashboard = () => {
   const handleDeletePet = async (petId) => {
     try {
       setDeleteLoading(true);
-      await axios.delete(`http://localhost:5003/api/adoptablepets/${petId}`);
+      await axios.delete(`https://cheems-final-submission-1.onrender.com/api/adoptablepets/${petId}`);
       
       // Remove the pet ID from hidden pets and save to localStorage
       setHiddenPetIds(prev => {
@@ -324,7 +324,7 @@ const PetAdoptionCoordinatorDashboard = () => {
 
   const handleCopyPet = async (petId) => {
     try {
-      const response = await axios.post(`http://localhost:5003/api/movePet/${petId}`);
+      const response = await axios.post(`https://cheems-final-submission-1.onrender.com/api/movePet/${petId}`);
       
       // Add the pet ID to hidden pets and save to localStorage
       setHiddenPetIds(prev => {
@@ -587,7 +587,7 @@ const PetAdoptionCoordinatorDashboard = () => {
                       {/* Pet Image */}
                       {pet.petImage ? (
                         <img 
-                          src={`http://localhost:5003${pet.petImage}`} 
+                          src={`https://cheems-final-submission-1.onrender.com${pet.petImage}`} 
                           alt={pet.petName} 
                           className="w-full h-128 object-cover"
                         />
@@ -663,7 +663,7 @@ const PetAdoptionCoordinatorDashboard = () => {
                       {/* Pet Image */}
                       {pet.petImage ? (
                         <img 
-                          src={`http://localhost:5003${pet.petImage}`} 
+                          src={`https://cheems-final-submission-1.onrender.com${pet.petImage}`} 
                           alt={pet.petName} 
                           className="w-full h-128 object-cover"
                         />
@@ -750,7 +750,7 @@ const PetAdoptionCoordinatorDashboard = () => {
                     {/* Pet Image */}
                     {pet.petImage ? (
                       <img
-                        src={`http://localhost:5003${pet.petImage}`}
+                        src={`https://cheems-final-submission-1.onrender.com${pet.petImage}`}
                         alt={pet.petName}
                         className="w-full h-128 object-cover"
                       />
@@ -855,7 +855,7 @@ const PetAdoptionCoordinatorDashboard = () => {
                               <div className="relative w-40 h-40 rounded-xl overflow-hidden">
                                 {form.petImage ? (
                                   <img 
-                                    src={form.petImage.startsWith('http') ? form.petImage : `http://localhost:5003${form.petImage}`} 
+                                    src={form.petImage.startsWith('http') ? form.petImage : `https://cheems-final-submission-1.onrender.com${form.petImage}`} 
                                     alt={form.petName} 
                                     className="w-full h-full object-cover"
                                     onError={(e) => {
@@ -1031,7 +1031,7 @@ const PetAdoptionCoordinatorDashboard = () => {
                         <div className="relative w-40 h-40 rounded-xl overflow-hidden">
                           {form.petImage ? (
                             <img 
-                              src={form.petImage.startsWith('http') ? form.petImage : `http://localhost:5003${form.petImage}`} 
+                              src={form.petImage.startsWith('http') ? form.petImage : `https://cheems-final-submission-1.onrender.com${form.petImage}`} 
                               alt={form.petName} 
                               className="w-full h-full object-cover"
                               onError={(e) => {
@@ -1559,7 +1559,7 @@ const PetAdoptionCoordinatorDashboard = () => {
                 <div className="relative pt-[125%]">
                   {pet.image ? (
                     <img
-                      src={`http://localhost:5003/uploads/${pet.image}`}
+                      src={`https://cheems-final-submission-1.onrender.com/uploads/${pet.image}`}
                       alt={pet.petName}
                       className="absolute top-0 left-0 w-full h-full object-cover"
                       onError={(e) => {
@@ -2057,7 +2057,7 @@ const PetAdoptionCoordinatorDashboard = () => {
     try {
       const token = localStorage.getItem('adminToken') || localStorage.getItem('token');
       await axios.put(
-        `http://localhost:5003/api/adoptionform/update/${formId}`,
+        `https://cheems-final-submission-1.onrender.com/api/adoptionform/update/${formId}`,
         { status: 'approved' },
         {
           headers: {
@@ -2092,7 +2092,7 @@ const PetAdoptionCoordinatorDashboard = () => {
       const token = localStorage.getItem('adminToken') || localStorage.getItem('token');
       // Reject the application
       await axios.put(
-        `http://localhost:5003/api/adoptionform/update/${formId}`,
+        `https://cheems-final-submission-1.onrender.com/api/adoptionform/update/${formId}`,
         { status: 'rejected' },
         {
           headers: {
@@ -2102,7 +2102,7 @@ const PetAdoptionCoordinatorDashboard = () => {
       );
       // Also update all related home visits to rejected
       await axios.put(
-        `http://localhost:5003/api/homevisits/by-form/${formId}/reject`,
+        `https://cheems-final-submission-1.onrender.com/api/homevisits/by-form/${formId}/reject`,
         {},
         {
           headers: {
@@ -2192,7 +2192,7 @@ const PetAdoptionCoordinatorDashboard = () => {
       console.log('Submitting visit data:', visitData); // Debug log
 
       const response = await axios.post(
-        'http://localhost:5003/api/homevisits',
+        'https://cheems-final-submission-1.onrender.com/api/homevisits',
         visitData,
         {
           headers: {
@@ -2347,7 +2347,7 @@ const PetAdoptionCoordinatorDashboard = () => {
       }
 
       console.log(`Deleting ${type} pet with ID:`, petId);
-      await axios.delete(`http://localhost:5003/api/lost-and-found/${type}/${petId}`, {
+      await axios.delete(`https://cheems-final-submission-1.onrender.com/api/lost-and-found/${type}/${petId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       
@@ -2390,7 +2390,7 @@ const PetAdoptionCoordinatorDashboard = () => {
     try {
       const token = localStorage.getItem('adminToken') || localStorage.getItem('token');
       await axios.put(
-        `http://localhost:5003/api/homevisits/${visitId}`,
+        `https://cheems-final-submission-1.onrender.com/api/homevisits/${visitId}`,
         { status },
         {
           headers: {
@@ -2433,7 +2433,7 @@ const PetAdoptionCoordinatorDashboard = () => {
 
       // Update the visit status to visited
       await axios.put(
-        `http://localhost:5003/api/homevisits/${visitId}`,
+        `https://cheems-final-submission-1.onrender.com/api/homevisits/${visitId}`,
         { status: 'visited' },
         {
           headers: {
@@ -2444,7 +2444,7 @@ const PetAdoptionCoordinatorDashboard = () => {
 
       // Update the adoption form status to pending review
       await axios.put(
-        `http://localhost:5003/api/adoptionform/update/${visit.adoptionFormId}`,
+        `https://cheems-final-submission-1.onrender.com/api/adoptionform/update/${visit.adoptionFormId}`,
         { status: 'pending_review' },
         {
           headers: {
@@ -2499,7 +2499,7 @@ const PetAdoptionCoordinatorDashboard = () => {
   const handleAdoptedPet = async (petId) => {
     try {
       setDeleteLoading(true);
-      await axios.post(`http://localhost:5003/api/adoptedpets/move/${petId}`);
+      await axios.post(`https://cheems-final-submission-1.onrender.com/api/adoptedpets/move/${petId}`);
       await Promise.all([
         fetchAdoptablePets(),
         fetchAdoptedPets(),

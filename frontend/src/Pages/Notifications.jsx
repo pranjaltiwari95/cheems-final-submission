@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:5003/api",
+  baseURL: "https://cheems-final-submission-1.onrender.com/api",
   headers: { "Content-Type": "application/json" },
 });
 

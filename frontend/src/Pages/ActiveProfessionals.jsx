@@ -25,7 +25,7 @@ export default function ActiveProfessionals() {
       try {
         setLoading(true);
         const response = await axios.get(
-          `http://localhost:5003/api/appointments/active-professionals?filter=${filters[selectedCategory]}`,
+          `https://cheems-final-submission-1.onrender.com/api/appointments/active-professionals?filter=${filters[selectedCategory]}`,
           { timeout: 5003 }
         );
         console.log("Response:", response.data);

@@ -37,7 +37,7 @@ const PetRegisterUserDashboard = () => {
   const fetchAdoptionForms = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5003/api/adoptionform/my-applications', {
+      const response = await axios.get('https://cheems-final-submission-1.onrender.com/api/adoptionform/my-applications', {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -58,7 +58,7 @@ const PetRegisterUserDashboard = () => {
   // Fetch home visits for the user
   const fetchHomeVisits = async () => {
     try {
-      const response = await axios.get('http://localhost:5003/api/homevisits/my-visits', {
+      const response = await axios.get('https://cheems-final-submission-1.onrender.com/api/homevisits/my-visits', {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -90,7 +90,7 @@ const PetRegisterUserDashboard = () => {
       }
 
       await axios.put(
-        `http://localhost:5003/api/homevisits/${selectedVisit._id}`,
+        `https://cheems-final-submission-1.onrender.com/api/homevisits/${selectedVisit._id}`,
         { 
           userResponse: visitResponse,
           userNotes: visitNotes,
@@ -139,7 +139,7 @@ const PetRegisterUserDashboard = () => {
   // Handle form deletion
   const handleDeleteForm = async (formId) => {
     try {
-      await axios.delete(`http://localhost:5003/api/adoptionform/delete/${formId}`, {
+      await axios.delete(`https://cheems-final-submission-1.onrender.com/api/adoptionform/delete/${formId}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -245,7 +245,7 @@ const PetRegisterUserDashboard = () => {
                         <div className="relative w-40 h-40 rounded-xl overflow-hidden shadow-md">
                           {form.petImage ? (
                             <img 
-                              src={form.petImage.startsWith('http') ? form.petImage : `http://localhost:5003${form.petImage}`} 
+                              src={form.petImage.startsWith('http') ? form.petImage : `https://cheems-final-submission-1.onrender.com${form.petImage}`} 
                               alt={form.petName} 
                               className="w-full h-full object-cover"
                               onError={(e) => {

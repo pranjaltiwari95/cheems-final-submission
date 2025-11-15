@@ -32,7 +32,7 @@ export default function UserAppointmentCard() {
 
   const fetchProfessionals = async () => {
     try {
-      const backendUrl = `http://localhost:5003/api/appointments/list?role=${activeSection}&filter=${filter}`;
+      const backendUrl = `https://cheems-final-submission-1.onrender.com/api/appointments/list?role=${activeSection}&filter=${filter}`;
       console.log("Fetching professionals with URL:", backendUrl);
       const response = await fetch(backendUrl, {
         headers: {
@@ -75,7 +75,7 @@ export default function UserAppointmentCard() {
       setError(null);
     } catch (error) {
       console.error("Error fetching professionals:", error.message);
-      setError(`Failed to fetch professionals: ${error.message}. Ensure the backend is running at http://localhost:5003 and serving /api/appointments/list.`);
+      setError(`Failed to fetch professionals: ${error.message}. Ensure the backend is running at https://cheems-final-submission-1.onrender.com and serving /api/appointments/list.`);
     }
   };
 

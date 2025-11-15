@@ -8,7 +8,7 @@ export const ShopContext = createContext();
 const ShopContextProvider = (props) => {
   const currency = '₹';
   const delivery_fee = 99;
-  const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5003';
+  const backendUrl = import.meta.env.VITE_BACKEND_URL || 'https://cheems-final-submission-1.onrender.com';
   const [search, setSearch] = useState('');
   const [showSearch, setShowSearch] = useState(true);
   const [cartItems, setCartItems] = useState({});

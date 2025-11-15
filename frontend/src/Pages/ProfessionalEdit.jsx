@@ -42,7 +42,7 @@ const ProfessionalEdit = () => {
         if (!token) {
           throw new Error('No authentication token found. Please log in again.');
         }
-        const response = await axios.get(`http://localhost:5003/api/professionals/${id}`, {
+        const response = await axios.get(`https://cheems-final-submission-1.onrender.com/api/professionals/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         
@@ -113,7 +113,7 @@ const ProfessionalEdit = () => {
       });
 
       const response = await axios.put(
-        `http://localhost:5003/api/professionals/update/${id}`,
+        `https://cheems-final-submission-1.onrender.com/api/professionals/update/${id}`,
         formDataToSend,
         {
           headers: { 
@@ -155,7 +155,7 @@ const ProfessionalEdit = () => {
     try {
       const token = localStorage.getItem('adminToken');
       const response = await axios.post(
-        `http://localhost:5003/api/professionals/delete/${id}`,
+        `https://cheems-final-submission-1.onrender.com/api/professionals/delete/${id}`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` },

@@ -34,7 +34,7 @@ const AdminRegister = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5003/api/admins/register', formData);
+      const response = await axios.post('https://cheems-final-submission-1.onrender.com/api/admins/register', formData);
       console.log('Admin registered:', response.data);
       navigate('/admin/redirect/user_admin');
     } catch (err) {

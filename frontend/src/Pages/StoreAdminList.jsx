@@ -3,7 +3,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { ShoppingBag, Search, Trash2, Plus, Package, AlertTriangle } from 'lucide-react';
 
-const backendUrl = 'http://localhost:5003';
+const backendUrl = 'https://cheems-final-submission-1.onrender.com';
 const currency = '₹ ';
 
 const StoreAdminList = ({ token }) => {

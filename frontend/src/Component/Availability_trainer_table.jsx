@@ -22,7 +22,7 @@ export default function PetTrainerAvailability() {
       try {
         console.log("Fetching pet trainer availabilities...");
         const response = await axios.get(
-          "http://localhost:5003/api/appointments/pet-trainer-Reqappointments",
+          "https://cheems-final-submission-1.onrender.com/api/appointments/pet-trainer-Reqappointments",
           { timeout: 5003 }
         );
         console.log("Response:", response.data);
@@ -81,7 +81,7 @@ export default function PetTrainerAvailability() {
   const handleAccept = async (id) => {
     try {
       setActionLoading(id);
-      const response = await axios.patch(`http://localhost:5003/api/appointments/${id}/accept`);
+      const response = await axios.patch(`https://cheems-final-submission-1.onrender.com/api/appointments/${id}/accept`);
       console.log("Accept response:", response.data);
 
       setAvailabilities(availabilities.filter((avail) => avail._id !== id));
@@ -101,7 +101,7 @@ export default function PetTrainerAvailability() {
   const handleDeny = async (id) => {
     try {
       setActionLoading(id);
-      const response = await axios.patch(`http://localhost:5003/api/appointments/${id}/deny`);
+      const response = await axios.patch(`https://cheems-final-submission-1.onrender.com/api/appointments/${id}/deny`);
       console.log("Deny response:", response.data);
 
       setAvailabilities(availabilities.filter((avail) => avail._id !== id));

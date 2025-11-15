@@ -5,7 +5,7 @@ import { PlusCircle, Upload, Tag, Info, Package, Layers, Check, FileText, Downlo
 import { jsPDF } from 'jspdf';
 import autoTable from 'jspdf-autotable';
 
-const backendUrl = 'http://localhost:5003';
+const backendUrl = 'https://cheems-final-submission-1.onrender.com';
 
 const StoreAdminAdd = ({ token }) => {
   const [image1, setImage1] = useState(null);

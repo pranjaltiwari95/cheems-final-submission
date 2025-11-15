@@ -65,7 +65,7 @@ const AddLostPet = () => {
       console.log('Sending form data:', Object.fromEntries(formDataToSend));
       console.log('Token:', token);
 
-      const response = await axios.post('http://localhost:5003/api/lost-and-found/lost', formDataToSend, {
+      const response = await axios.post('https://cheems-final-submission-1.onrender.com/api/lost-and-found/lost', formDataToSend, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'multipart/form-data'

@@ -28,7 +28,7 @@ const UserEdit = () => {
     const fetchProfile = async () => {
       try {
         const token = localStorage.getItem('petOwnerToken');
-        const response = await axios.get('http://localhost:5003/api/users/profile', {
+        const response = await axios.get('https://cheems-final-submission-1.onrender.com/api/users/profile', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setFormData({
@@ -163,7 +163,7 @@ const UserEdit = () => {
         }
       });
 
-      const response = await axios.put('http://localhost:5003/api/users/updateProfile', formDataToSend, {
+      const response = await axios.put('https://cheems-final-submission-1.onrender.com/api/users/updateProfile', formDataToSend, {
         headers: { 
           Authorization: `Bearer ${token}`,
           'Content-Type': 'multipart/form-data'
@@ -194,7 +194,7 @@ const UserEdit = () => {
   const handleDeleteProfile = async () => {
     try {
       const token = localStorage.getItem('petOwnerToken');
-      const response = await axios.post('http://localhost:5003/api/users/deleteProfile', {}, {
+      const response = await axios.post('https://cheems-final-submission-1.onrender.com/api/users/deleteProfile', {}, {
         headers: { Authorization: `Bearer ${token}` }
       });
       
