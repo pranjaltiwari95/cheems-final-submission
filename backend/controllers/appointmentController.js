@@ -25,10 +25,10 @@ export const createAppointment = async (req, res) => {
     }
     const userId = req.user.userId;
 
-    const { doctorId, appointmentDate, appointmentTime, userName, phoneNo, email, appointmentType, appointmentFee } = req.body;
+    const { doctorId, appointmentDate, appointmentTime, userName, phoneNo, email, appointmentType, appointmentFee = 0 } = req.body;
 
     // Validate required fields
-    if (!doctorId || !appointmentDate || !appointmentTime || !userName || !phoneNo || !email || !appointmentType || !appointmentFee) {
+    if (!doctorId || !appointmentDate || !appointmentTime || !userName || !phoneNo || !email || !appointmentType) {
       await session.abortTransaction();
       return res.status(400).json({ success: false, message: "All fields are required" });
     }
