@@ -14,7 +14,7 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
-const AppointmentForm = ({ professional, onClose, appointmentType, appointmentFee }) => {
+const AppointmentForm = ({ professional, onClose, appointmentType}) => {
   const [formData, setFormData] = useState({
     doctorId: professional?.id || "",
     appointmentDate: "",
@@ -23,7 +23,7 @@ const AppointmentForm = ({ professional, onClose, appointmentType, appointmentFe
     phoneNo: "",
     email: "",
     appointmentType: "",
-    appointmentFee: appointmentFee || "",
+    // appointmentFee: appointmentFee || "",
   });
 
   const [formErrors, setFormErrors] = useState({});
