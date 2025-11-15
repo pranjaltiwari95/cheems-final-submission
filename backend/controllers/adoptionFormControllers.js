@@ -1,4 +1,4 @@
-import AdoptionForm from '../models/adoptionForm.js';
+import AdoptionForm from '../models/AdoptionForm.js';
 
 export const createApplication = async (req, res) => {
     try {
